@@ -1,0 +1,21 @@
+<script>
+<!--    async fxn only works if server allows CORS-->
+(async function(){
+
+    //set URL going to navigat to (google fonts)
+    let url = "https://fonts.googleapis.com/css?family=Font+Name";
+    //make a request by creating a variable and asigning a await keywork with
+    // waiting an answer from the server? when instructor types fetch?
+    //"o wait for that answer coming back from the server "
+    //parameter/argument='(url);'
+    // await+ fetch returns a promise
+    // ^^ the promise to be fulfilled using await
+
+    //*" The first one makes the connection. The second one
+    // *waits for the text within the page."
+    const res = await fetch(url);
+    //extract data by creating a variable and asigning a await keywork with
+    const data = await res.text();
+    console.log(data);
+})();
+</script>

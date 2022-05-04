@@ -1,0 +1,30 @@
+<script>
+  function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+      setTimeout (() =>{
+        resolve('resolved');
+      }, 2000);
+    });
+  }
+
+  //aync function named asyncCall consumes the promise fxn
+
+  //the async function first writes to the
+  // console that is calling. (line 22)
+  // In line 23, async then waits for the result and the
+  // resolution of the Promise, which in this case
+  // resolves in two seconds (~line3-6). And then the message
+  //resolved messaged is returned to the console after 2 seconds
+  //Possibly lines 4+23+25
+  async function asyncCall(){
+    //  print into the console
+    console.log('calling');
+    //assign keyword 'await'+ call resolve2secfxn to result
+    const result = await resolveAfter2Seconds();
+    //write the reult into the console
+    console.log(result);
+  }
+
+//  invoke async function
+  asyncCall();
+</script>
